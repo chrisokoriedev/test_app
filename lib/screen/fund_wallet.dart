@@ -43,14 +43,24 @@ class _FundWalletScreenState extends State<FundWalletScreen> {
             itemBuilder: (context, index) {
               final option = cardOptions[index];
               return ListTile(
-                leading: Radio(
-                  value: option,
-                  groupValue: _selectedOption,
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedOption = value as CardModel;
-                    });
-                  },
+                leading: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Radio(
+                      value: option,
+                      groupValue: _selectedOption,
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedOption = value as CardModel;
+                        });
+                      },
+                    ),
+                    Image.asset(
+                      option.imagePath,
+                      width: 40,
+                      height: 40,
+                    ),
+                  ],
                 ),
                 title: Text(option.title),
                 subtitle: Text(option.description),
@@ -60,7 +70,10 @@ class _FundWalletScreenState extends State<FundWalletScreen> {
                       cardOptions.removeAt(index);
                     });
                   },
-                  child: const Icon(Icons.delete),
+                  child: const Icon(
+                    Icons.delete,
+                    color: AppColor.kRedColor,
+                  ),
                 ),
               );
             },
