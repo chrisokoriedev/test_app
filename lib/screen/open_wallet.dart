@@ -3,8 +3,10 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:test_app/core/color.dart';
 import 'package:test_app/core/const.dart';
+import 'package:test_app/core/img_dir.dart';
 import 'package:test_app/widget/major_button.dart';
 import 'package:test_app/widget/texts.dart';
+import 'package:test_app/widget/transaction_history_card.dart';
 
 class OpenWalletScreen extends StatelessWidget {
   const OpenWalletScreen({super.key});
@@ -63,21 +65,20 @@ class OpenWalletScreen extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
             Gap(sizeMedia.height * 0.03),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: AppColor.kWhiteColor,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: const [
-                  BoxShadow(
-                    color: AppColor.kLightgreyII,
-                    blurRadius: 6,
-                    offset: Offset(0, 2),
-                    spreadRadius: 0,
-                  )
-                ],
-              ),
+            TransactionHistoryCard(
+              transactionTypeTitle: 'Top-Up',
+              transactionTypeSubTitle: 'Credit',
+              transactionAmount: '₦10,000',
+              transactionImg: ImageOf.topUp,
+              status: "Successful",
+            ),
+            const Gap(15),
+            TransactionHistoryCard(
+              transactionTypeTitle: 'Pharmacy Purchase',
+              transactionTypeSubTitle: 'Debit',
+              transactionAmount: '₦10,800',
+              transactionImg: ImageOf.cart,
+              status: "Failed",
             )
           ],
         ),
