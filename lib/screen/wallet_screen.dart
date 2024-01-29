@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:test_app/screen/create_wallet.dart';
 import 'package:test_app/widget/texts.dart';
 
 class WalletScreen extends StatelessWidget {
@@ -29,7 +31,7 @@ class WalletScreen extends StatelessWidget {
                     backgroundColor:
                         MaterialStatePropertyAll(Color(0xff67156E)),
                     fixedSize: MaterialStatePropertyAll(Size(220, 40))),
-                onPressed: () {},
+                onPressed: () => Get.to(const CreateWalletScreen()),
                 child: TextOf(
                   'Create Wallet',
                   16,
