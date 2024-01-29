@@ -43,6 +43,7 @@ class _FundWalletScreenState extends State<FundWalletScreen> {
             itemBuilder: (context, index) {
               final option = cardOptions[index];
               return ListTile(
+                contentPadding: EdgeInsets.zero,
                 leading: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
