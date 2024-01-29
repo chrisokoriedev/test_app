@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:test_app/core/color.dart';
 import 'package:test_app/core/const.dart';
 import 'package:test_app/widget/input_field.dart';
@@ -27,6 +28,7 @@ class OpenWalletScreen extends StatelessWidget {
                   color: AppColor.kLightRedColor,
                   borderRadius: BorderRadius.circular(7)),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +46,11 @@ class OpenWalletScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ],
-                  )
+                  ),
+                  MajorButton('Fund Wallet', 150,
+                      isShowIcon: true,
+                      iconData: Icons.add,
+                      press: () => Get.to(const OpenWalletScreen())),
                 ],
               ),
             )
