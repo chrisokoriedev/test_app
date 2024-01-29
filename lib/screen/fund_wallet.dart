@@ -64,7 +64,7 @@ class _FundWalletScreenState extends State<FundWalletScreen> {
                   ],
                 ),
                 title: Text(option.title),
-                subtitle: Text(option.description),
+                subtitle: Text(option.description,style: const TextStyle(fontStyle: FontStyle.italic,),),
                 trailing: GestureDetector(
                   onTap: () {
                     setState(() {
@@ -84,7 +84,7 @@ class _FundWalletScreenState extends State<FundWalletScreen> {
             color: AppColor.kLightgrey,
           ),
           Gap(sizeMedia.height * 0.032),
-          InkResponse(
+          GestureDetector(
             onTap: () => Get.to(const AddCardScreen()),
             child: Row(
               children: [
