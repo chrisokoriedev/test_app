@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:test_app/core/color.dart';
 import 'package:test_app/core/const.dart';
 import 'package:test_app/core/img_dir.dart';
+import 'package:test_app/screen/fund_wallet.dart';
 import 'package:test_app/widget/input_field.dart';
 import 'package:test_app/widget/major_button.dart';
 import 'package:test_app/widget/texts.dart';
@@ -141,7 +142,7 @@ class Bottomsheet extends StatelessWidget {
           InputField('Amount', '0.00'),
           Gap(sizeMedia.height * 0.025),
           MajorButton('Continue', double.maxFinite,
-              press: () => Get.to(const OpenWalletScreen())),
+              press: () => Get.to(const FundWalletScreen())),
         ],
       ),
     );
