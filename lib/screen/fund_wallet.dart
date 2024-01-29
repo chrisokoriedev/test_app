@@ -15,7 +15,6 @@ class FundWalletScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final sizeMedia = MediaQuery.of(context).size;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Fund Wallet'),
       ),
@@ -27,7 +26,7 @@ class FundWalletScreen extends StatelessWidget {
             onTap: () => Get.to(const AddCardScreen()),
             child: Row(
               children: [
-                Icon(Icons.add, size: 18, color: AppColor.kPrimaryColor),
+                const Icon(Icons.add, size: 18, color: AppColor.kPrimaryColor),
                 TextOf(
                   'Add Card',
                   16,
