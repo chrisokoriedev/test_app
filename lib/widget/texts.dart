@@ -4,7 +4,8 @@ class TextOf extends StatelessWidget {
   String title;
   double? size;
   Color? textColor;
-  TextOf(this.title, this.size, this.textColor, {super.key});
+  FontWeight fontWeight;
+  TextOf(this.title, this.size, this.textColor,  {super.key,this.fontWeight=FontWeight.w400,});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +14,7 @@ class TextOf extends StatelessWidget {
       style: TextStyle(
         color: textColor,
         fontSize: size,
-        fontFamily: 'Work Sans',
-        fontWeight: FontWeight.w600,
-        height: 0,
+        fontWeight: fontWeight,
       ),
     );
   }
