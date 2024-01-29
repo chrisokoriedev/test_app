@@ -3,7 +3,6 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:test_app/core/color.dart';
 import 'package:test_app/core/const.dart';
-import 'package:test_app/widget/input_field.dart';
 import 'package:test_app/widget/major_button.dart';
 import 'package:test_app/widget/texts.dart';
 
@@ -12,6 +11,7 @@ class OpenWalletScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeMedia = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Wallet'),
@@ -19,8 +19,9 @@ class OpenWalletScreen extends StatelessWidget {
       body: Padding(
         padding: appPadding,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Gap(MediaQuery.of(context).size.height * 0.05),
+            Gap(sizeMedia.height * 0.03),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
@@ -51,6 +52,30 @@ class OpenWalletScreen extends StatelessWidget {
                       isShowIcon: true,
                       iconData: Icons.add,
                       press: () => Get.to(const OpenWalletScreen())),
+                ],
+              ),
+            ),
+            Gap(sizeMedia.height * 0.04),
+            TextOf(
+              'Transaction History',
+              20,
+              AppColor.kdarkBlack,
+              fontWeight: FontWeight.w500,
+            ),
+            Gap(sizeMedia.height * 0.03),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: AppColor.kWhiteColor,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [
+                  BoxShadow(
+                    color: AppColor.kLightgreyII,
+                    blurRadius: 6,
+                    offset: Offset(0, 2),
+                    spreadRadius: 0,
+                  )
                 ],
               ),
             )
