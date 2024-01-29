@@ -121,9 +121,12 @@ class Bottomsheet extends StatelessWidget {
                 AppColor.kdarkBlack,
                 fontWeight: FontWeight.w600,
               ),
-              const Icon(
-                Icons.close,
-                size: 18,
+              InkResponse(
+                onTap: () => Get.back(),
+                child: const Icon(
+                  Icons.close,
+                  size: 18,
+                ),
               )
             ],
           ),
@@ -141,8 +144,10 @@ class Bottomsheet extends StatelessWidget {
           Gap(sizeMedia.height * 0.025),
           InputField('Amount', '0.00'),
           Gap(sizeMedia.height * 0.025),
-          MajorButton('Continue', double.maxFinite,
-              press: () => Get.to(const FundWalletScreen())),
+          MajorButton('Continue', double.maxFinite, press: () {
+            Get.back();
+            Get.to(const FundWalletScreen());
+          }),
         ],
       ),
     );
