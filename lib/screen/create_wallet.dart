@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:test_app/core/const.dart';
+import 'package:test_app/screen/open_wallet.dart';
 import 'package:test_app/widget/input_field.dart';
 import 'package:test_app/widget/major_button.dart';
 
@@ -22,7 +24,8 @@ class CreateWalletScreen extends StatelessWidget {
             const Gap(20),
             InputField('Wallet ID', 'Auto-generated'),
             const Spacer(),
-            MajorButton('Create Wallet', double.maxFinite, press: () {}),
+            MajorButton('Create Wallet', double.maxFinite,
+                press: () => Get.to(const OpenWalletScreen())),
             const Gap(20),
           ],
         ),
